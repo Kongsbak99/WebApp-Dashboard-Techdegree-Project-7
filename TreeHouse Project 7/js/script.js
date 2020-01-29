@@ -93,9 +93,11 @@ const submit = document.getElementById('submit');
 submit.onclick = function(){
   var searchUser = document.getElementById('searchUser').value;
   var messageUser = document.getElementById('messageUser').value;
-
-  if (searchUser == ''){
-    alert('Please select a user')
+  if(searchUser == '' && messageUser == '') {
+    alert('Please select a user & write a message to send')
+  }
+  else if (searchUser == ''){
+    alert('Please select a user to send')
   }else if(messageUser == ''){
     alert('Please write a message to send')
   }else{

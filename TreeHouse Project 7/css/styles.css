@@ -6,7 +6,7 @@ html{
   padding: 0;
 }
 body{
-  max-width: 800px;
+
   margin: 0 auto 0 auto;
 }
 a{
@@ -53,7 +53,8 @@ header{
 }
 .user-nav h1,
 .user-nav img,
-.user-nav h2{
+.user-nav h2,
+#noti-marker{
   display: flex;
   flex-direction: row;
 }
@@ -76,8 +77,27 @@ header{
   padding-right: 15px;
   border-right-style: solid;
   border-width: 1px;
-  border-color: gray;
+  border-color: black;
 }
+
+#noti-marker{
+    display: block;
+    position: absolute;
+    background: lightgreen;
+    padding: 3px 3px;
+    margin: -8px 0 0 14px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.st0{
+  transition: fill .4s ease;
+}
+#Layer_1 .st0:hover{
+  fill: lightgreen;
+
+}
+
 .user-nav h2{
   color: white;
   margin: auto 10px auto 5px;
@@ -197,12 +217,12 @@ aside{
 
 /* Styling the chart */
 
-.lineChart{
+/* .lineChart{
   display: block;
   margin: 5px auto 10px auto;
   max-width: 250px;
   max-height: 100px;
-}
+} */
 
 
 
@@ -218,11 +238,6 @@ aside{
   font-size: .7em;
   font-weight: lighter;
 }
-.barchart{
-  max-width: 250px;
-  height: 80%;
-}
-
 
 
 
@@ -294,7 +309,7 @@ aside{
     margin-left: 10px;
 }
 .flex-social-container{
-  align-items: center;
+  display: block;
 }
 
 
@@ -478,6 +493,7 @@ aside{
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+
 .settings-row{
   display: flex;
   flex-direction: row;
@@ -524,37 +540,56 @@ aside{
   margin: 0 auto 20px auto;
   font-size: .7em;
   margin: 0 auto 0 auto;
+}
+.lineChart{
+  max-height: 190px;
+}
 
+@media screen and (min-width: 550px) {
+  .grid{
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: 50px 50px 275px 250px 150px 250px 250px;
+    grid-template-areas:
+    "header header header"
+    "aside dashboard dashboard"
+    "aside chart1 chart1"
+    "aside chart2 chart3"
+    "aside social social"
+    "aside feed1 feed2"
+    "aside message-user settings";
+  }
+  .flex-social-container{
+    display: flex;
+  }
+  .social-container{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
-
-
-@media (min-width: 321px) {
-    .grid{
-      display: grid;
-      grid-template-columns: 50px 1fr 1fr;
-      grid-template-rows: 50px 50px 275px 250px 150px 250px 250px;
-      grid-template-areas:
-      "header header header"
-      "aside dashboard dashboard"
-      "aside chart1 chart1"
-      "aside chart2 chart3"
-      "aside social social"
-      "aside feed1 feed2"
-      "aside message-user settings";
-    }
+@media screen and (min-width: 768px) {
+  .grid{
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: 50px 50px 275px 250px 150px 250px 250px;
+    grid-template-areas:
+    "header header header"
+    "aside dashboard dashboard"
+    "aside chart1 chart1"
+    "aside chart2 chart3"
+    "aside social social"
+    "aside feed1 feed2"
+    "aside message-user settings";
   }
+
   .lineChart{
-    max-width: 900px;
-    max-height: 150px;
     width: 90%;
-    height: 90%;
-    margin: 10px auto 20px auto;
+    height:75%;
+    margin: 0 auto 20px auto;
   }
-  .barchart{
-    max-width: 450px;
-  }
+
   .donutchart{
     max-height: 450px;
     max-width: ;
@@ -564,4 +599,5 @@ aside{
   .search input{
     width: 300px;
   }
+
 }
